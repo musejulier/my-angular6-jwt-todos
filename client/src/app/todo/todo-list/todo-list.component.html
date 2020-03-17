@@ -1,0 +1,15 @@
+<ul>
+  <li *ngFor="let todo of todo$ | async; let idx = index">
+    <span class="content">{{idx+1}}. {{todo.name}}</span>
+    <span class="status" [ngStyle]="{color: todo.completed ? '#117a8b' : 'gray'}">{{todo.completed ? '已完成' : '未完成'}}</span>
+    <button class="change-btn" (click)="updateState(todo.id, !todo.completed)">修改状态</button>
+    <button class="delete-btn" (click)="deleteTodo(todo.id)">删除</button>
+  </li>
+</ul>
+<button  class="add-btn" (click)="showEdit()">添加新任务</button>
+<div class="todo-input" *ngIf="showEditArea">
+  <label for="content">任务内容:</label><textarea type="textarea"  name="content" placeholder="请输入任务内容" maxLength='500' required  [(ngModel)]="name"></textarea>
+  <button  (click)="addTodo()">确认添加</button>
+</div>
+  
+

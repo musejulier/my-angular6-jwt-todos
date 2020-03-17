@@ -1,0 +1,9 @@
+.login-form {
+    padding-left: 15px;
+}
+.login-form label{
+    width: 64px;
+}
+.login-form .submit-btn{
+    padding-left: 0;
+}

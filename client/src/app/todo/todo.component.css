@@ -1,0 +1,23 @@
+.nav{
+    border-bottom: 1px solid #ccc;
+    padding-left: 25px;
+}
+.nav .nav-item{
+   
+    background-color: #fff;
+    padding: 5px 10px;
+}
+.nav a:hover{
+    text-decoration: none;
+}
+.nav .nav-item.active{
+    border-top: 3px solid red;
+    margin-bottom: -1px;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.todo-content{
+    padding: 15px;
+
+}
+

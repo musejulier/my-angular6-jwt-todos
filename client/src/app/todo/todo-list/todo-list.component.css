@@ -1,0 +1,64 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+li {
+  font-size: 1.5rem;
+  
+}
+ul li .content{
+  display: inline-block;
+  width: 200px;
+}
+ul li .status{
+  font-size: 16px;
+  margin-right: 20px;
+}
+ul li .change-btn{
+  font-size: 14px;
+  margin-left: 20px;
+}
+ul li .delete-btn{
+  font-size: 14px;
+  margin-left: 10px;
+}
+input {
+  transform: scale(2);
+  margin-right: 20px;
+}
+form label, form textarea, form input{
+  vertical-align: middle;
+}
+form label{
+  margin-right: 10px;
+  width: 72px;
+}
+.add-btn {
+  background: #117a8b;
+  color: #fff;
+  font-size: 14px;
+  padding: 3px 10px;
+}
+.todo-input{
+  margin-top: 17px;
+}
+.todo-input button{
+  margin-left: 19px;
+}
+.todo-input textarea{
+  vertical-align: middle;
+  margin: 10px;
+}
+button:focus,
+button:active:focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button.active.focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow:none;
+}
+

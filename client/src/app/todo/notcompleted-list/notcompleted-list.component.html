@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let todo of todo$ | async; let idx = index">
+    <span>{{idx+1}}. </span>{{todo.name}}
+  </li>
+</ul>
