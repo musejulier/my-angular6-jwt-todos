@@ -1,27 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { TodoListComponent } from './todo/todo-list/todo-list.component';
+import { CompletedListComponent } from './todo/completed-list/completed-list.component';
 import { TodoService } from './todo.service';
-import { UserService } from './user.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './login/login.component';
+import { NotcompletedListComponent } from './todo/notcompleted-list/notcompleted-list.component';
+import { InterceptorService } from './Interceptor.service';
+import { TodoComponent } from './todo/todo.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TodoComponent,
     TodoListComponent,
-    UserListComponent,
+    CompletedListComponent,
+    NotcompletedListComponent,
     LoginComponent
   ],
   imports: [
@@ -39,9 +43,12 @@ import { LoginComponent } from './login/login.component';
   ],
   providers: [
     TodoService,
-    UserService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi:true}
   ],
   bootstrap: [AppComponent]
 })

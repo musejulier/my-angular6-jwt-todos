@@ -5,7 +5,8 @@ import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   public username: string;
@@ -18,7 +19,9 @@ export class LoginComponent {
     this.auth.login(this.username, this.password)
       .pipe(first())
       .subscribe(
-        result => this.router.navigate(['todos']),
+        result => {
+          this.router.navigate(['todo/todos'])
+        },
         err => this.error = 'Could not authenticate'
       );
   }

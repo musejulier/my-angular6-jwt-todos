@@ -1,3 +1,13 @@
-nav {
-  margin-bottom: 10px;
+.header{
+  background: #117a8b;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 14px 8px;
+}
+.header .logout{
+  padding: 0 15px;
+  color: #46DEFF;
+  font-size: 14px;
 }
